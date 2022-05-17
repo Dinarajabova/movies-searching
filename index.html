@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-warning">
+    <main>
+        <div class="container">
+
+          <form action="#" method="get" class="search-form">
+          <input type="text" placeholder="search" class="search-input mt-5">
+          <button type="submit">Click</button>
+          </form>
+
+          <h2 class="pt-3 h4 text-center fs-1">Movies</h2>
+          <ul class="movies-list d-flex justify-content-around flex-wrap">
+            
+          </ul>
+        </div>
+      </main>
+
+     <template id="movies-template">
+       <li class="card w-25 m-3 bg-info">
+         <h3 class="movie-title text-center text-danger h1"></h3>
+         <p class="movie-year fs-3 text-success"></p>
+         <h4 class="casting h2"></h4>
+         <ul class="cast-list">
+           <li class="cast-item"></li>
+         </ul>
+         <h4 class="h2"></h4>
+         <p class="text-primary"></p>
+       </li>
+
+     </template>
+
+
+      <script src="js/kinolar.js"></script>
+      <script src="js/utils.js"></script>
+      <script src="js/main.js"></script>
+</body>
+</html>
