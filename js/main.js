@@ -25,19 +25,14 @@ let createItem = function(kino) {
 }
 
 
-
-
 // elementlarni render qilish
 let renderElements = function() {
     let moviesFragmentWrapper = document.createDocumentFragment();
-
-
     movie.forEach(function(kino) {
 
         moviesFragmentWrapper.append(createItem(kino));
 
     });
-    
     movieList.append(moviesFragmentWrapper);
 }
 
@@ -50,7 +45,7 @@ const searchInput = document.querySelector(".search-input");
 
 
 // Form buttunga event listener qo'shish
-searchForm.addEventListener("submit", function(evt) {
+searchForm.addEventListener("change", function(evt) {
     evt.preventDefault();
 
     movieList.innerHTML = "";
@@ -60,20 +55,18 @@ searchForm.addEventListener("submit", function(evt) {
  
     var searchRegex = new RegExp(inputValue, "gi");
 
-   
-    
+     
     kinolar.forEach((kino) => {
         if (kino.title.match(searchRegex)) {
             searchingMovie.push(kino);
         }
     })
 
-
     // izlangan kinolarni yangi arrayga createElement qilish
     for (let k = 0; k < searchingMovie.length; k++) {
         const searchedMovie = searchingMovie[k];
 
-       const sMovieItem = createElement("li", "card w-25 m-3 bg-info");
+        const sMovieItem = createElement("li", "card w-25 m-3 bg-info");
         const sMovieTitle = createElement("h3", "movie-title text-center text-danger h1", searchedMovie.title);
         const sMovieYear = createElement("p", "movie-year fs-3 text-success", searchedMovie.year);
         const sMovieCast = createElement("h4", "casting h2", "Casting");
@@ -95,10 +88,7 @@ searchForm.addEventListener("submit", function(evt) {
         sMovieItem.append(sMovieTitle, sMovieYear, sMovieCast, sCastingList, sMovieGenre, sGenresList);
     }
 
-    
 
     console.log(searchingMovie);
-
-
  })
     
